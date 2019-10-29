@@ -1,0 +1,6 @@
+org\TFG\project\RegistrationServlet.class
+org\TFG\project\MainServlet.class
+accounts\AccountService.class
+accounts\UserProfile.class
+org\TFG\project\AuthorizationServlet.class
+org\TFG\project\DBControler.class

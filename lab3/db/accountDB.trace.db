@@ -1,0 +1,120 @@
+10-25 10:23:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE TABLE USERS(USERID INT AUTO_INCREMENT PRIMARY KEY,                                 LOGIN VARCHAR(25),                                 PASSWORD VARCHAR(25),                                 EMAIL VARCHAR(25), [*]"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE USERS(USERID INT AUTO_INCREMENT PRIMARY KEY,                                 LOGIN VARCHAR(25),                                 PASSWORD VARCHAR(25),                                 EMAIL VARCHAR(25), [*]"; expected "identifier"; SQL statement:
+CREATE TABLE USERS(userId int auto_increment primary key,                                 login varchar(25),                                 password varchar(25),                                 email varchar(25), [42001-187]
+10-25 10:27:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE TABLE USERS(USERID INT AUTO_INCREMENT PRIMARY KEY,                                 LOGIN VARCHAR(25),                                 PASSWORD VARCHAR(25),                                 EMAIL VARCHAR(25), [*]"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE USERS(USERID INT AUTO_INCREMENT PRIMARY KEY,                                 LOGIN VARCHAR(25),                                 PASSWORD VARCHAR(25),                                 EMAIL VARCHAR(25), [*]"; expected "identifier"; SQL statement:
+CREATE TABLE USERS(userId int auto_increment primary key,                                 login varchar(25),                                 password varchar(25),                                 email varchar(25), [42001-187]
+10-25 10:51:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS1" не найдена
+Table "USERS1" not found; SQL statement:
+INSERT INTO USERS1 (login, password, email) VALUES (admin, admin, admin@mail.ru, ) [42102-187]
+10-25 10:51:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS1" не найдена
+Table "USERS1" not found; SQL statement:
+SELECT password FROM USERS1 WHERE login = admin [42102-187]
+10-25 10:54:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS1" не найдена
+Table "USERS1" not found; SQL statement:
+INSERT INTO USERS1 (login, password, email) VALUES (admin, admin, admin@mail.ru, ) [42102-187]
+10-25 10:58:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE TABLE USERS1(                                 LOGIN VARCHAR(25) PRIMARY KEY,                                  PASSWORD VARCHAR(25),                                  EMAIL VARCHAR(25), [*]"; ожидалось "identifier"
+Syntax error in SQL statement "CREATE TABLE USERS1(                                 LOGIN VARCHAR(25) PRIMARY KEY,                                  PASSWORD VARCHAR(25),                                  EMAIL VARCHAR(25), [*]"; expected "identifier"; SQL statement:
+CREATE TABLE USERS1(                                 login varchar(25) primary key,                                  password varchar(25),                                  email varchar(25), [42001-187]
+10-25 11:01:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS1 (LOGIN, PASSWORD, EMAIL) VALUES (ADMIN, ADMIN, ADMIN@[*]MAIL.RU, ) "; ожидалось "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS1 (LOGIN, PASSWORD, EMAIL) VALUES (ADMIN, ADMIN, ADMIN@[*]MAIL.RU, ) "; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS1 (login, password, email) VALUES (admin, admin, admin@mail.ru, ) [42001-187]
+10-25 11:03:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO USERS1 (LOGIN, PASSWORD, EMAIL) VALUES (ADMIN, ADMIN, ADMIN@[*]MAIL.RU) "; ожидалось "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO USERS1 (LOGIN, PASSWORD, EMAIL) VALUES (ADMIN, ADMIN, ADMIN@[*]MAIL.RU) "; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO USERS1 (login, password, email) VALUES (admin, admin, admin@mail.ru) [42001-187]
+10-25 11:05:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "ADMIN" не найден
+Column "ADMIN" not found; SQL statement:
+INSERT INTO USERS1 (login, password, email) VALUES (admin, admin, admin) [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.command.dml.Insert.prepare(Insert.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:247)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.TFG.project.DBControler.ExecuteCommand(DBControler.java:43)
+	at org.TFG.project.RegistrationServlet.doPost(RegistrationServlet.java:28)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+10-25 11:08:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "ADMIN" не найден
+Column "ADMIN" not found; SQL statement:
+SELECT password FROM USERS1 WHERE login = admin [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:180)
+	at org.h2.command.dml.Select.prepare(Select.java:880)
+	at org.h2.command.Parser.prepareCommand(Parser.java:247)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:73)
+	at org.TFG.project.DBControler.ExecuteCommandAndReturn(DBControler.java:57)
+	at org.TFG.project.AuthorizationServlet.doPost(AuthorizationServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:647)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+10-25 11:13:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Объект уже закрыт
+The object is already closed [90007-187]
+10-25 11:15:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-187]
+10-25 11:18:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-187]
+10-25 11:21:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Нет данных
+No data is available [2000-187]
